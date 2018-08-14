@@ -13,26 +13,20 @@ struct Node
   Node *next;
 };
 
-void removedup(Node* head){
+int kthfromlast(Node* head){
+  int K;
+  cin >> K;
   Node* prev;
   Node* curr;
   curr=head;
-  unordered_map<int,bool> occurences;
+  unordered_map<int,int> occurences;
+  int index=0;
   while(curr!=NULL){
-    if (occurences[(int)curr->val]==true){
-      prev->next=curr->next;
-      curr=curr->next;
-    }
-    else{
-    occurences[curr->val]=true;
-    prev=curr;
+    occurences[index]=curr->val;
     curr=curr->next;
-    }
+    index++;
   }
-  while(head!=NULL){
-    cout << head->val << endl;
-    head=head->next;
-  }
+    return occurences[index-K];
 
 }
 
@@ -52,5 +46,5 @@ int main() {
     newNode->val=23;
     newNode->next=newNode1;
     head= newNode;
-    removedup(head);
+    cout << kthfromlast(head);
 }
