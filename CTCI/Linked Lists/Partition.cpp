@@ -14,9 +14,33 @@ struct Node
 };
 
 void Partition(Node* head,int partitionValue){
-  Node* prev;
-  Node* curr;
-  
+  Node * head = nullptr;
+  Node * headInitial = nullptr;
+  Node * tail = nullptr;
+  Node * tailInitial = nullptr;
+  Node * curr = listhead;
+  while( curr != nullptr ) {
+    Node * nextNode = curr->next;
+    if ( curr->data < x ) {
+           if (head == nullptr) {
+               head = curr;
+               headInitial = head;
+           }
+      head->next = curr;
+      head = curr;
+    } else {
+           if (tail == nullptr) {
+               tail = curr;
+               tailInitial = tail;
+           }
+      tail->next = curr;
+      tail = curr;
+    }
+    curr = nextNode;
+  }
+  head->next = tailInitial;
+  tail->next = nullptr;
+  return headInitial;
 }
 
 
