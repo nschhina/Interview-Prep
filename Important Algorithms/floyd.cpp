@@ -1,4 +1,4 @@
-/**
+/*
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
@@ -6,7 +6,9 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
- // Complexity Space- O(1) Time- O(log N)
+
+
+//Complexity Space- O(1) Time- O(log N)
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
