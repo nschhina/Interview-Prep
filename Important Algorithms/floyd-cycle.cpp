@@ -4,7 +4,6 @@
  *     int val;
  *     ListNode *next;
  *     ListNode(int x) : val(x), next(NULL) {}
- * };
  */
 //Complexity Space- O(1) Time- O(log N)
 class Solution {
