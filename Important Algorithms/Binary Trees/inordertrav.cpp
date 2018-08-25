@@ -11,6 +11,9 @@
  class Solution {
  public:
      void inOrder(TreeNode* root) {
-        if(root==nullptr) return
+        if(root==nullptr) return;
+        inOrder(root->left);
+        cout << root->val << endl;
+        inOrder(root->right);
      }
  };
